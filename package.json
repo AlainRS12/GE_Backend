@@ -4,7 +4,8 @@
   "description": "Mi api de la angencia escolar",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "start": "node index.js"
   },
   "type": "module",
   "author": "Victor Hernandex Salcedo",
