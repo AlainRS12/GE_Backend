@@ -19,7 +19,7 @@ db.authenticate()
   .catch((err) =>
     console.error("No se pudo conectar a la base de datos:", err)
   );
- const dominiosPermitidos = ["http://localhost:3000"];
+ const dominiosPermitidos = [process.env.FRONTEND_URL];
   const corsOptions = {
     origin: function(origin, callback){
       if(dominiosPermitidos.indexOf(origin) !== -1){
@@ -36,7 +36,7 @@ db.authenticate()
   app.use("/api/solicitud",solicitudRoutes);
   app.use("/api/boletaMovimiento",boletaMovimientoRoutes);
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
